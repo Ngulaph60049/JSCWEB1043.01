@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Liên hệ</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, nav, footer {
+      text-align: center;
+      padding: 10px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: white;
+    }
+
+    form {
+      width: 500px;
+      background: #fff;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 16px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 6px;
+    }
+
+    .error {
+      color: red;
+      font-size: 13px;
+      margin-top: -4px;
+      margin-bottom: 8px;
+    }
+
+    button {
+      background-color: #2196f3;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0d8ae8;
+    }
+
+    #formMsg {
+      margin-top: 10px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <header><h1>Liên hệ với chúng tôi</h1></header>
+
+  <nav>
+    <a href="index.html">Trang chủ</a>
+    <a href="products.html">Sản phẩm</a>
+    <a href="cart.html">Giỏ hàng</a>
+    <a href="contact.html">Liên hệ</a>
+  </nav>
+
+  <!-- Form liên hệ -->
+  <form id="contactForm">
+    <h2>Liên hệ</h2>
+
+    <label for="name">Họ tên:</label>
+    <input type="text" id="name">
+    <div class="error" id="errName"></div>
+
+    <label for="email">Email:</label>
+    <input type="text" id="email">
+    <div class="error" id="errEmail"></div>
+
+    <label for="phone">Số điện thoại:</label>
+    <input type="number" id="phone">
+    <div class="error" id="errPhone"></div>
+
+    <label for="product">Sản phẩm:</label>
+    <input type="text" id="product">
+    <div class="error" id="errProduct"></div>
+
+    <label for="proofImage">Ảnh minh chứng:</label>
+    <input type="file" id="proofImage">
+
+    <button type="submit">Gửi</button>
+    <div id="formMsg"></div>
+  </form>
+
+  <!-- Gọi script JS -->
+  <script src="js/contact.js"></script>
+  <footer>Bản quyền © 2026 Laptop Shop. All rights reserved.</footer>
+</body>
+</html>

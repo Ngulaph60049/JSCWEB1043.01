@@ -12,5 +12,6 @@ function tinhTienDien(kwh) {
     return tongTien;
 }
 
-let soKwh = 230;
+
+let soKwh = 120;
 console.log(`Số tiền điện cho ${soKwh}kWh là: ${tinhTienDien(soKwh).toLocaleString()}đ`);

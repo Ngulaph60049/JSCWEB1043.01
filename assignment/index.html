@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Trang chủ</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Đặt trong thẻ <style> hoặc tốt nhất chuyển sang style.css */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+  color: #222;
+}
+
+header {
+  background: linear-gradient(90deg, #2196f3 60%, #21cbf3 100%);
+  color: #fff;
+  padding: 32px 0 24px 0;
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(33,150,243,0.08);
+}
+
+nav {
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(33,150,243,0.06);
+  padding: 14px 0;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+nav a {
+  text-decoration: none;
+  color: #2196f3;
+  margin: 0 22px;
+  font-weight: 700;
+  font-size: 1.08rem;
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-bottom 0.2s;
+}
+
+nav a:hover, nav a:focus {
+  color: #0d8ae8;
+  border-bottom: 2px solid #21cbf3;
+}
+
+.container {
+  max-width: 900px;
+  margin: 36px auto 24px auto;
+  background: #fff;
+  padding: 36px 28px 32px 28px;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(33,150,243,0.10);
+}
+
+.promo-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2196f3;
+  text-align: center;
+  margin-bottom: 28px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #e3f2fd;
+}
+
+.slideshow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 18px;
+  position: relative;
+  min-height: 220px;
+}
+
+.slide {
+  width: 100%;
+  max-width: 420px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(33,150,243,0.10);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.slide[style*="display: block"], .slide:not([style*="display: none"]) {
+  animation: fadeIn 0.7s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98);}
+  to { opacity: 1; transform: scale(1);}
+}
+
+.countdown {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #e53935;
+  margin: 18px 0 0 0;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 6px #ffcdd2;
+}
+
+.actions {
+  text-align: center;
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.actions button {
+  background: linear-gradient(90deg, #2196f3 60%, #21cbf3 100%);
+  color: #fff;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.08rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 0 10px;
+  box-shadow: 0 2px 12px rgba(33,150,243,0.10);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.actions button:hover {
+  background: linear-gradient(90deg, #0d8ae8 60%, #2196f3 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 24px rgba(33,150,243,0.18);
+}
+
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 18px 0 12px 0;
+  margin-top: 48px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 -2px 12px rgba(33,150,243,0.08);
+}
+
+@media (max-width: 900px) {
+  .container {
+    max-width: 98vw;
+    padding: 18px 4vw 18px 4vw;
+  }
+  .slide {
+    max-width: 98vw;
+    height: 160px;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    font-size: 1.2rem;
+    padding: 18px 0 12px 0;
+  }
+  .promo-title {
+    font-size: 1.2rem;
+  }
+  .container {
+    padding: 10px 2vw 10px 2vw;
+    margin: 10px auto;
+  }
+  .slide {
+    height: 110px;
+    border-radius: 10px;
+  }
+  .actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .actions button {
+    width: 100%;
+    margin: 0;
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+  footer {
+    font-size: 0.95rem;
+    padding: 10px 0 8px 0;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Laptop Shop</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Trang chủ</a>
+    <a href="products.html">Sản phẩm</a>
+    <a href="cart.html">Giỏ hàng</a>
+    <a href="contact.html">Liên hệ</a>
+  </nav>
+
+  <div class="container">
+    <div class="promo-title">Flash Sale Siêu Hot</div>
+
+    <div class="slideshow">
+      <img class="slide" src="img/laptop1.jpg" alt="Ảnh 1">
+      <img class="slide" src="img/laptop2.jpg" alt="Ảnh 2" style="display:none;">
+      <img class="slide" src="img/laptop3.jpg" alt="Ảnh 3" style="display:none;">
+    </div>
+
+
+    <div class="countdown" id="countdown">Flash sale còn: 1 phút 59 giây</div>
+
+    <div class="actions">
+      <button onclick="location.href='products.html'">Xem sản phẩm</button>
+      <button onclick="location.href='contact.html'">Liên hệ đặt mua</button>
+    </div>
+  </div>
+
+  <footer>
+    Bản quyền © 2026 Laptop Shop. All rights reserved.
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>renderProducts();</script>
+</body>
+
+</html>

@@ -1,4 +1,5 @@
 function tinhLuong() {
+
     let chucVu = prompt("Nhập chức vụ (intern, staff, senior, manager):").toLowerCase();
     let ngayCong = Number(prompt("Nhập số ngày công thực tế trong tháng:"));
     
@@ -24,11 +25,14 @@ function tinhLuong() {
             return; 
     }
 
+  
     let luong = heSo * ngayCong * (luongCoBan / ngayCongQuyDinh);
 
+   
     alert(`Chức vụ: ${chucVu.toUpperCase()}
 Số ngày công: ${ngayCong}
 Tổng lương nhận được: ${luong.toLocaleString('vi-VN')}đ`);
 }
+
 
 tinhLuong();

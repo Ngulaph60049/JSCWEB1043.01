@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chi tiết sản phẩm</title>
+  <style>
+    body {
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+  min-height: 100vh;
+}
+
+.product-detail {
+  max-width: 900px;
+  margin: 48px auto;
+  background: #fff;
+  border-radius: 22px;
+  padding: 36px 32px 32px 32px;
+  box-shadow: 0 8px 32px rgba(33,150,243,0.10), 0 2px 12px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-detail img {
+  max-width: 360px;
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(33,150,243,0.08);
+  margin-bottom: 24px;
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s;
+}
+
+.product-detail img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 32px rgba(33,150,243,0.18);
+}
+
+.product-info {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 0;
+  text-align: center;
+}
+
+.product-info h2 {
+  color: #1976d2;
+  margin-bottom: 16px;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #e3f2fd;
+}
+
+.product-info p {
+  font-size: 1.08rem;
+  margin: 10px 0 18px 0;
+  color: #444;
+  line-height: 1.6;
+}
+
+.product-info strong {
+  color: #1976d2;
+}
+
+.product-info .price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #e53935;
+  margin-bottom: 18px;
+  display: block;
+  letter-spacing: 1px;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 28px;
+  background: linear-gradient(90deg, #2196f3 60%, #21cbf3 100%);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.back:hover {
+  background: linear-gradient(90deg, #0d8ae8 60%, #2196f3 100%);
+  box-shadow: 0 4px 16px rgba(33,150,243,0.18);
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* Responsive cho mobile */
+@media (max-width: 700px) {
+  .product-detail {
+    max-width: 98vw;
+    padding: 16px 2vw 18px 2vw;
+    border-radius: 12px;
+  }
+  .product-detail img {
+    max-width: 98vw;
+    border-radius: 10px;
+    margin-bottom: 14px;
+  }
+  .product-info h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  .product-info p {
+    font-size: 1rem;
+    margin: 6px 0 10px 0;
+  }
+  .back {
+    font-size: 1rem;
+    padding: 10px 0;
+    width: 100%;
+  }
+}
+  </style>
+</head>
+<body>
+
+<div class="product-detail" id="detail-container">
+  <p>Đang tải chi tiết sản phẩm...</p>
+</div>
+
+<script>
+// Danh sách sản phẩm (nên tách riêng ra file JS nếu bạn muốn dùng chung)
+const products = [
+  {
+    id: 1,
+    name: "Lenovo Legion 5",
+    price: 18000000,
+    image: "img/laptop1.jpg",
+    description: "Laptop gaming Lenovo Legion 5, hiệu năng cao, thiết kế mạnh mẽ."
+  },
+  {
+    id: 2,
+    name: "Lenovo Yoga Slim 7i",
+    price: 25000000,
+    image: "img/laptop2.jpg",
+    description: "Laptop mỏng nhẹ Lenovo Yoga Slim 7i, thời trang, hiệu năng tốt."
+  },
+  {
+    id: 3,
+    name: "MacBook Air M1",
+    price: 26000000,
+    image: "img/laptop3.jpg",
+    description: "MacBook Air M1, nhẹ, pin trâu, hiệu suất mạnh mẽ."
+  },
+  {
+    id: 4,
+    name: "ASUS ROG Zephyrus",
+    price: 23000000,
+    image: "img/laptop4.jpg",
+    description: "Laptop gaming ASUS ROG Zephyrus, mỏng nhẹ, mạnh mẽ."
+  },
+  {
+    id: 5,
+    name: "ASUS ROG Strix",
+    price: 25000000,
+    image: "img/laptop5.jpg",
+    description: "ROG Strix, đèn RGB, thiết kế chiến, hiệu suất cao."
+  }
+];
+
+// Lấy ID từ URL
+const params = new URLSearchParams(window.location.search);
+const productId = parseInt(params.get("id"));
+
+const product = products.find(p => p.id === productId);
+const container = document.getElementById("detail-container");
+
+if (product) {
+  container.innerHTML = `
+    <img src="${product.image}" alt="${product.name}">
+    <div class="product-info">
+      <h2>${product.name}</h2>
+      <p><strong>Giá:</strong> ${product.price.toLocaleString()} VNĐ</p>
+      <p><strong>Mô tả:</strong> ${product.description}</p>
+      <a class="back" href="products.html">← Quay lại sản phẩm</a>
+    </div>
+  `;
+} else {
+  container.innerHTML = `<p style="color:red;">Không tìm thấy sản phẩm!</p>`;
+}
+</script>
+
+</body>
+</html>

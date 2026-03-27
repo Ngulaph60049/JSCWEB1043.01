@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Đặt Hàng</title>
+</head>
+<body>
+  <h2>Đặt Hàng / Liên Hệ</h2>
+  <form id="order-form">
+    <input type="text" id="name" placeholder="Họ tên"><br>
+    <input type="email" id="email" placeholder="Email"><br>
+    <input type="tel" id="phone" placeholder="SĐT"><br>
+    <input type="text" id="product" placeholder="Sản phẩm cần mua"><br>
+    <input type="file" id="proof"><br>
+    <button type="submit">Gửi</button> 
+  </form>
+
+  <script>
+    document.getElementById("order-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const product = document.getElementById("product").value.trim();
+
+      if (!name || !email || !phone || !product) {
+        alert("Vui lòng nhập đầy đủ thông tin");
+        return;
+      }
+
+      alert("Đặt hàng thành công!");
+    });
+  </script>
+</body>
+</html>

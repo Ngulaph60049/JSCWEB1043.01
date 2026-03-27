@@ -1,0 +1,55 @@
+<!-- cart.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Giỏ hàng</title>
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <header>
+    <h1>🛒 Giỏ hàng của bạn</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Trang chủ</a>
+    <a href="products.html">Sản phẩm</a>
+    <a href="cart.html">Giỏ hàng</a>
+    <a href="contact.html">Liên hệ</a>
+  </nav>
+
+  <main class="cart-container">
+    <table id="cart-table">
+      <thead>
+        <tr>
+          <th>Hình ảnh</th>
+          <th>Tên sản phẩm</th>
+          <th>Giá</th>
+          <th>Số lượng</th>
+          <th>Thành tiền</th>
+          <th>Xóa</th>
+        </tr>
+      </thead>
+      <tbody id="cart-body">
+      </tbody>
+    </table>
+
+    <div class="cart-summary">
+      <p id="total-price">Tổng tiền: 0 VNĐ</p>
+      <button onclick="clearCart()" class="clear-btn">🗑 Xóa Đơn Hàng</button>
+    </div>
+
+    <div>
+      <button onclick="checkout()" class="checkout-btn">💳 Thanh toán</button>
+      <p id="checkout-message" style="color: green; margin-top: 10px;"></p>
+    </div>
+
+  </main>
+
+  <footer>Bản quyền © 2026 Laptop Shop. All rights reserved.</footer>
+
+  <!-- Script xử lý giỏ hàng -->
+  <script src="js/cart.js"></script>
+</body>
+</html>
