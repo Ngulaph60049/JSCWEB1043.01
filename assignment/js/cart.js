@@ -96,7 +96,7 @@ function checkout() {
     return;
   }
 
-  let method = prompt("Vui lòng chọn phương thức thanh toán (nhập số):\n1. COD\n2. Chuyển khoản\n3. Momo", "1");
+  let method = prompt("Vui lòng chọn phương thức thanh toán (nhập số):\n1. Tiền mặt\n2. Chuyển khoản\n3. Momo", "1");
 
   if (method === null) {
     document.getElementById("checkout-message").innerText = "Bạn đã hủy thanh toán.";
@@ -106,7 +106,7 @@ function checkout() {
   let methodText;
   switch (method.trim()) {
     case "1":
-      methodText = "COD";
+      methodText = "Tiền mặt";
       break;
     case "2":
       methodText = "Chuyển khoản";
